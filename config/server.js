@@ -1,9 +1,16 @@
 module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  admin: {
-    auth: {
-      secret: env('ADMIN_JWT_SECRET', '8ca7097228d45292878d2215c72e20bf'),
-    },
+  host: env("HOST", "0.0.0.0"),
+  port: env.int("PORT", 1337),
+  app: {
+    keys: env.array("APP_KEYS"),
   },
+  
 });
+
+// module.exports = ({ env }) => ({
+//   host: env("HOST", "0.0.0.0"),
+//   port: env.int("PORT", 1337),
+//   app: {
+//     keys: env.array("APP_KEYS"),
+//   },
+// });
